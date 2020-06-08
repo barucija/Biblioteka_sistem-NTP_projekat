@@ -9,7 +9,7 @@ using namespace std;
 
 //BRISANJE SADRZAJA NA EKRANU
 void cls() {
-	
+
 	system("CLS");
 
 }
@@ -51,9 +51,10 @@ void pocetni_displej() {
 	cout << "\t\t\t            1. Pregled knjiga u biblioteci\n";
 	cout << "\t\t\t            2. Pretraga odredjene knjige\n";
 	cout << "\t\t\t            3. Uclanjenje u biblioteku [sedmicno, mjesecno,godisnje]\n";
-	cout << "\t\t\t            4. Informacije o biblioteci\n";
-	cout << "\t\t\t            5. Mjesto za kritiku/pohvalu [ ocjenu sistema ]\n";
-	cout << "\t\t\t            6. Promjena korisnickog rezima\n";
+	cout << "\t\t\t            4. Racunanje popusta za godisnje clanstvo\n";
+	cout << "\t\t\t            5. Informacije o biblioteci\n";
+	cout << "\t\t\t            6. Mjesto za kritiku/pohvalu [ ocjenu sistema ]\n";
+	cout << "\t\t\t            7. Promjena korisnickog rezima\n";
 	cout << "\t\t\t            10. Izlaz iz programa\n";
 
 	cout << endl;
@@ -77,7 +78,7 @@ void feedback(string poruka, int ocjena, string potpis) {
 
 	kritika_pohvala << "\t\t\t\t\t\t\t\tKritika/pohvala: " << poruka << endl;
 	kritika_pohvala << "\t\t\t\t\t\t\t\tVasa ocjena: ";
-	
+
 	if (ocjena == 1) {
 
 		kritika_pohvala << " 1 [ lose ] " << endl;
@@ -130,85 +131,85 @@ void feedback(string poruka, int ocjena, string potpis) {
 
 void feedback_menu() {
 
-		system("CLS");
+	system("CLS");
 
-		cout << endl;
-		cout << endl;
+	cout << endl;
+	cout << endl;
 
-		cout << "\t\t\t         ____________" << endl;
-		cout << "\t\t\t        |            |" << endl;
-		cout << "\t\t\t        |  FEEDBACK  |" << endl;
-		cout << "\t\t\t        |____________|" << endl;
+	cout << "\t\t\t         ____________" << endl;
+	cout << "\t\t\t        |            |" << endl;
+	cout << "\t\t\t        |  FEEDBACK  |" << endl;
+	cout << "\t\t\t        |____________|" << endl;
 
-		cout << endl;
-		cout << endl;
-		cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
 
-		cout << "\t\t\tOdlicno         ->  * * * * * [5]\n";
-		cout << "\t\t\tDobro           ->  * * * *   [4]\n";
-		cout << "\t\t\tProsjecno       ->  * * *     [3]\n";
-		cout << "\t\t\tIspod prosjeka  ->  * *       [2]\n";
-		cout << "\t\t\tLose            ->  *         [1]\n";
+	cout << "\t\t\tOdlicno         ->  * * * * * [5]\n";
+	cout << "\t\t\tDobro           ->  * * * *   [4]\n";
+	cout << "\t\t\tProsjecno       ->  * * *     [3]\n";
+	cout << "\t\t\tIspod prosjeka  ->  * *       [2]\n";
+	cout << "\t\t\tLose            ->  *         [1]\n";
 
 
-		cout << "\n\t\t	    Vasa ocjena za sistem? ";
-		int ocjena;
-		cin >> ocjena;
-		cin.ignore();
+	cout << "\n\t\t	    Vasa ocjena za sistem? ";
+	int ocjena;
+	cin >> ocjena;
+	cin.ignore();
 
-		cout << "\n\t\t	  Ostavite kritiku/pohvalu...";
+	cout << "\n\t\t	  Ostavite kritiku/pohvalu...";
 
-		string poruka;
-		cout << "\n\t\t    ";  getline(cin, poruka);
+	string poruka;
+	cout << "\n\t\t    ";  getline(cin, poruka);
 
-		string potpis;
-		cout << "\n\t        Zelite li potpisati feedback? [ 1 - DA; 0 - NE ]: ";
-		int izbor;
-		cin >> izbor;
-		cin.ignore();
+	string potpis;
+	cout << "\n\t        Zelite li potpisati feedback? [ 1 - DA; 0 - NE ]: ";
+	int izbor;
+	cin >> izbor;
+	cin.ignore();
 
-		if (izbor == 1) {
+	if (izbor == 1) {
 
-			cout << "\n\t\t          Mjesto za potpis: ";
-			getline(cin, potpis);
-		
-		}
-
-		cout << endl;
-		cout << endl;
-
-		feedback(poruka, ocjena, potpis);
-
-		cout << "\t\t     ______________________________________\n";
-		cout << "\t\t    |                                      |\n";
-		cout << "\t\t    |    Hvala na ostavljenom feedback-u   |\n";
-		cout << "\t\t    |                                      |\n";
-		cout << "\t\t    |   ---USPJESNO POHRANJEN FEEDBACK---  |\n";
-		cout << "\t\t    |______________________________________|";
-
-		cout << "\n\n\n\t\t\t\t\t\t  Pritisnite ESC za izlazak iz programa\n";
-
-		system("PAUSE>null");
-		system("CLS");
-
-		cout << endl;
-		cout << endl;
-
-		cout << "\t\t         _____________________________________" << endl;
-		cout << "\t\t        |                                     |" << endl;
-		cout << "\t\t        |  HVALA NA KORISTENJU NASEG SISTEMA  |" << endl;
-		cout << "\t\t        |_____________________________________|" << endl;
-
-		cout << endl;
-		cout << endl;
-		cout << endl;
-
-		cout << "\n\n\n\t\t\t\t\t\t  Pritisnite ESC za izlazak iz programa\n";
-
-		system("PAUSE>null");
-		system("CLS");
+		cout << "\n\t\t          Mjesto za potpis: ";
+		getline(cin, potpis);
 
 	}
+
+	cout << endl;
+	cout << endl;
+
+	feedback(poruka, ocjena, potpis);
+
+	cout << "\t\t     ______________________________________\n";
+	cout << "\t\t    |                                      |\n";
+	cout << "\t\t    |    Hvala na ostavljenom feedback-u   |\n";
+	cout << "\t\t    |                                      |\n";
+	cout << "\t\t    |   ---USPJESNO POHRANJEN FEEDBACK---  |\n";
+	cout << "\t\t    |______________________________________|";
+
+	cout << "\n\n\n\t\t\t\t\t\t  Pritisnite ESC za izlazak iz programa\n";
+
+	system("PAUSE>null");
+	system("CLS");
+
+	cout << endl;
+	cout << endl;
+
+	cout << "\t\t         _____________________________________" << endl;
+	cout << "\t\t        |                                     |" << endl;
+	cout << "\t\t        |  HVALA NA KORISTENJU NASEG SISTEMA  |" << endl;
+	cout << "\t\t        |_____________________________________|" << endl;
+
+	cout << endl;
+	cout << endl;
+	cout << endl;
+
+	cout << "\n\n\n\t\t\t\t\t\t  Pritisnite ESC za izlazak iz programa\n";
+
+	system("PAUSE>null");
+	system("CLS");
+
+}
 
 void glavni_meni() {
 
@@ -268,8 +269,10 @@ void glavni_meni_korisnici() {
 	cout << "\t\t\t          1. Pregled knjiga\n";
 	cout << "\t\t\t          2. Pretraga knjige\n";
 	cout << "\t\t\t          3. Uclanjenje\n";
-	cout << "\t\t\t          4. O nama\n";
-	cout << "\t\t\t          6. Promjena nacina rada\n";
+	cout << "\t\t\t          4. Racunanje popusta za godisnje clanstvo\n";
+	cout << "\t\t\t          5. O nama\n";
+	cout << "\t\t\t          6. Mjesto za kritiku/pohvalu [ ocjena za sistem ]\n";
+	cout << "\t\t\t          7. Promjena nacina rada\n";
 	cout << "\t\t\t          10. Izlaz\n";
 
 	cout << endl;
@@ -449,6 +452,29 @@ void meni_za_pregled_korisnika() {
 
 }
 
+void popust() {
+
+	cout << endl;
+
+	cout << endl;
+	cout << endl;
+
+	cout << "\t\t\t\t ______________________" << endl;
+	cout << "\t\t\t\t|                      |" << endl;
+	cout << "\t\t\t\t|  POPUST NA CLANSTVO  |" << endl;
+	cout << "\t\t\t\t|______________________|" << endl;
+
+
+	cout << endl;
+	cout << endl;
+
+	cout << "\t\t Popust mozete ostvariti ukoliko ste dugogodisnji clan bibilioteke. \n";
+	cout << "\t\t Svakim sljedecim uclanjenjem na godisnjoj bazi ostvarujte popust od 90%. \n";
+
+	cout << endl;
+
+}
+
 //________________________________________________________________________________________________
 
 								//ENUMERACIJE
@@ -577,16 +603,16 @@ struct Korisnik {
 		cout << endl;
 		cout << endl;
 
-		cout << "\t\t\t\t    | 1 - Sedmicno      |\n";
-		cout << "\t\t\t\t    | 2 - Mjesecno      |\n";
-		cout << "\t\t\t\t    | 3 - Godisnje      |\n";
+		cout << "\t\t\t\t    | 1 - Sedmicno [ 10 KM ]  |\n";
+		cout << "\t\t\t\t    | 2 - Mjesecno [ 15 KM ]  |\n";
+		cout << "\t\t\t\t    | 3 - Godisnje [ 50 KM ] |\n";
 
 		cout << "\n\t\t\t\t    Odaberite vremenski period clanstva: ";
 		int odabir_clanstva;
 		cin >> odabir_clanstva;
 
 		while (odabir_clanstva < 1 || odabir_clanstva > 3) {
-			
+
 			if (cin.fail()) {
 
 				cin.clear();
@@ -604,9 +630,9 @@ struct Korisnik {
 				cout << "\t\t\t\t    Pogresan unos...\n ";
 				cout << "\t\t\t\t    Vremenski period clanstva je u rasponu od 1 do 3!\n";
 				cout << "\n\t\t\t\t    Molimo ponovo unesite vremenski period clanstva: ";
-			
+
 			}
-			
+
 			cin >> odabir_clanstva;
 
 		}
@@ -686,7 +712,7 @@ struct Korisnik {
 			k.datum_uclanjenja.mjesec == 12) {
 
 			while (k.datum_uclanjenja.dan < 1 || k.datum_uclanjenja.dan > 31) {
-				
+
 				if (cin.fail()) {
 
 					cin.clear();
@@ -709,9 +735,9 @@ struct Korisnik {
 				}
 
 				cin >> k.datum_uclanjenja.dan;
-				
+
 			}
-			
+
 		}
 
 
@@ -1198,6 +1224,7 @@ struct Knjiga {
 	string izdavacka_kuca;
 	int broj_stranica;
 	int na_stanju;
+	float cijena_godisnje_pretplate = 50;
 	Zanr zanr_knjige;
 	Stil_pisanja stil;
 
@@ -1207,214 +1234,224 @@ struct Knjiga {
 
 		Knjiga k;
 
-		cin.ignore();
+		ofstream sve_knjige_ikad_unesene("lista_svih_unesenih_knjiga.txt", ios::app);
 
-		cout << "\t\t\t\t    Naziv knjige: ";			
-		
-		getline(cin, k.naziv);
+		if (sve_knjige_ikad_unesene.is_open()) {
 
-		cout << endl;
+			cin.ignore();
 
-		cout << "\t\t\t\t    Ime autora: ";				
-		
-		getline(cin, k.ime_autora);
+			cout << "\t\t\t\t    Naziv knjige: ";
 
-		cout << endl;
+			getline(cin, k.naziv);
 
-		cout << "\t\t\t\t    Prezime autora: ";			
-		
-		getline(cin, k.prezime_autora);
+			cout << endl;
 
-		cout << endl;
+			cout << "\t\t\t\t    Ime autora: ";
 
-		cout << "\t\t\t\t    Izdavacka kuca: ";			
-		
-		getline(cin, k.izdavacka_kuca);
+			getline(cin, k.ime_autora);
 
-		cout << endl;
+			cout << endl;
 
-		cout << "\t\t\t\t    Godina izdavanja: ";		
-		
-		cin >> k.godina_izdavanja;			
-		
-		while (k.godina_izdavanja < 1) {
+			cout << "\t\t\t\t    Prezime autora: ";
 
-			if (cin.fail()) {
+			getline(cin, k.prezime_autora);
 
-				cin.clear();
-				cin.ignore();
+			cout << endl;
 
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite godinu izdavanja knjige: ";
+			cout << "\t\t\t\t    Izdavacka kuca: ";
 
-				cin.get();
-			}
+			getline(cin, k.izdavacka_kuca);
 
-			else {
+			cout << endl;
 
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite godinu izdavanja knjige: ";
-
-			}
+			cout << "\t\t\t\t    Godina izdavanja: ";
 
 			cin >> k.godina_izdavanja;
 
-		}
+			while (k.godina_izdavanja < 1) {
 
-		cin.ignore();
+				if (cin.fail()) {
 
-		cout << endl;
+					cin.clear();
+					cin.ignore();
 
-		cout << "\t\t\t\t    Broj stranica: ";			
-		
-		cin >> k.broj_stranica;
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite godinu izdavanja knjige: ";
 
-		while (k.broj_stranica < 1) {
+					cin.get();
+				}
 
-			if (cin.fail()) {
+				else {
 
-				cin.clear();
-				cin.ignore();
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite godinu izdavanja knjige: ";
 
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite broj stranica: ";
+				}
 
-				cin.get();
-			}
-
-			else {
-
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite broj stranica: ";
+				cin >> k.godina_izdavanja;
 
 			}
+
+			cin.ignore();
+
+			cout << endl;
+
+			cout << "\t\t\t\t    Broj stranica: ";
 
 			cin >> k.broj_stranica;
 
-		}
-		
-		cin.ignore();
+			while (k.broj_stranica < 1) {
 
-		cout << endl;
-		cout << endl;
+				if (cin.fail()) {
 
-		cout << "\t\t\t\t     ----Lista zanrova----\n";
-		cout << "\t\t\t\t    | 1 - Drama           |\n";
-		cout << "\t\t\t\t    | 2 - Djecije         |\n";
-		cout << "\t\t\t\t    | 3 - Kriminalisticki |\n";
-		cout << "\t\t\t\t    | 4 - Triler          |\n";
-		cout << "\t\t\t\t    | 5 - Historijski     |\n";
+					cin.clear();
+					cin.ignore();
 
-		cout << "\n\t\t\t\t    Odabir zanra: ";
-		int odabir_zanra;
-		cin >> odabir_zanra;
-		
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite broj stranica: ";
 
-		while (odabir_zanra < 1 || odabir_zanra > 5) {
+					cin.get();
+				}
 
-			if (cin.fail()) {
+				else {
 
-				cin.clear();
-				cin.ignore();
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite broj stranica: ";
 
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite redni broj zanra: ";
+				}
 
-				cin.get();
-			}
-
-			else {
-
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\t\t\t\t    Vremenski period clanstva je u rasponu od 1 do 5!\n";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite redni broj zanra: ";
+				cin >> k.broj_stranica;
 
 			}
 
+			cin.ignore();
+
+			cout << endl;
+			cout << endl;
+
+			cout << "\t\t\t\t     ----Lista zanrova----\n";
+			cout << "\t\t\t\t    | 1 - Drama           |\n";
+			cout << "\t\t\t\t    | 2 - Djecije         |\n";
+			cout << "\t\t\t\t    | 3 - Kriminalisticki |\n";
+			cout << "\t\t\t\t    | 4 - Triler          |\n";
+			cout << "\t\t\t\t    | 5 - Historijski     |\n";
+
+			cout << "\n\t\t\t\t    Odabir zanra: ";
+			int odabir_zanra;
 			cin >> odabir_zanra;
 
-		}
 
-		k.zanr_knjige = (Zanr)odabir_zanra;
+			while (odabir_zanra < 1 || odabir_zanra > 5) {
 
-		cout << endl;
-		cout << endl;
+				if (cin.fail()) {
 
-		cout << "\t\t\t\t     ----Lista stilova----\n";
-		cout << "\t\t\t\t    | 1 - Roman           |\n";
-		cout << "\t\t\t\t    | 2 - Pripovijetka    |\n";
-		cout << "\t\t\t\t    | 3 - Poezija         |\n";
-		cout << "\t\t\t\t    | 4 - Bajka           |\n";
+					cin.clear();
+					cin.ignore();
 
-		cout << "\n\t\t\t\t    Odabir stila pisanja: ";
-		int odabir_stila;
-		cin >> odabir_stila;
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite redni broj zanra: ";
 
-		while (odabir_stila < 1 || odabir_stila > 4) {
+					cin.get();
+				}
 
-			if (cin.fail()) {
+				else {
 
-				cin.clear();
-				cin.ignore();
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\t\t\t\t    Vremenski period clanstva je u rasponu od 1 do 5!\n";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite redni broj zanra: ";
 
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite redni broj stila pisanja: ";
+				}
 
-				cin.get();
-			}
-
-			else {
-
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\t\t\t\t    Vremenski period clanstva je u rasponu od 1 do 4!\n";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite redni broj stila pisanja: ";
+				cin >> odabir_zanra;
 
 			}
 
+			k.zanr_knjige = (Zanr)odabir_zanra;
+
+			cout << endl;
+			cout << endl;
+
+			cout << "\t\t\t\t     ----Lista stilova----\n";
+			cout << "\t\t\t\t    | 1 - Roman           |\n";
+			cout << "\t\t\t\t    | 2 - Pripovijetka    |\n";
+			cout << "\t\t\t\t    | 3 - Poezija         |\n";
+			cout << "\t\t\t\t    | 4 - Bajka           |\n";
+
+			cout << "\n\t\t\t\t    Odabir stila pisanja: ";
+			int odabir_stila;
 			cin >> odabir_stila;
 
-		}
+			while (odabir_stila < 1 || odabir_stila > 4) {
 
-		k.stil = (Stil_pisanja)odabir_stila;
+				if (cin.fail()) {
 
-		cout << endl;
+					cin.clear();
+					cin.ignore();
 
-		cout << "\t\t\t\t    Kolicina na stanju: ";		
-		
-		cin >> k.na_stanju;					
-		
-		while (k.na_stanju < 1) {
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite redni broj stila pisanja: ";
 
-			if (cin.fail()) {
+					cin.get();
+				}
 
-				cin.clear();
-				cin.ignore();
+				else {
 
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite broj knjiga na stanju: ";
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\t\t\t\t    Vremenski period clanstva je u rasponu od 1 do 4!\n";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite redni broj stila pisanja: ";
 
-				cin.get();
-			}
+				}
 
-			else {
-
-				cout << "\t\t\t\t    Pogresan unos...\n ";
-				cout << "\n\t\t\t\t    Molimo ponovo unesite broj knjiga na stanju: ";
+				cin >> odabir_stila;
 
 			}
+
+			k.stil = (Stil_pisanja)odabir_stila;
+
+			cout << endl;
+
+			cout << "\t\t\t\t    Kolicina na stanju: ";
 
 			cin >> k.na_stanju;
 
+			while (k.na_stanju < 1) {
+
+				if (cin.fail()) {
+
+					cin.clear();
+					cin.ignore();
+
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\t\t\t\t    Unijeli ste znak, a unos je u obliku broja.\n";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite broj knjiga na stanju: ";
+
+					cin.get();
+				}
+
+				else {
+
+					cout << "\t\t\t\t    Pogresan unos...\n ";
+					cout << "\n\t\t\t\t    Molimo ponovo unesite broj knjiga na stanju: ";
+
+				}
+
+				cin >> k.na_stanju;
+
+			}
+
+			cin.ignore();
+
+			cout << endl;
+
+			sve_knjige_ikad_unesene << k.naziv << " " << k.ime_autora << " " << k.prezime_autora << " " << k.izdavacka_kuca << endl;
+
+			sve_knjige_ikad_unesene.close();
+
 		}
-
-		cin.ignore();
-
-		cout << endl;
 
 		return k;
 
@@ -2431,6 +2468,23 @@ void pretraga_muskih_osoba(Korisnik* k, int brojac) {
 
 }
 
+//________________________________________________________________________________________________
+
+float cijena_godisnja_pretplata(float cijena_godisnja, int koji_put) {
+
+	if (koji_put == 1) {
+
+		return cijena_godisnja;
+
+	}
+
+	cijena_godisnja = cijena_godisnja * 0.90;
+
+	return cijena_godisnja_pretplata(cijena_godisnja, koji_put - 1);
+
+}
+
+
 int main() {
 
 	setlocale(LC_ALL, "");
@@ -3248,7 +3302,7 @@ int main() {
 	}
 
 	if (login == 2) {
-		
+
 		do {
 
 		za_korisnike:
@@ -3272,432 +3326,40 @@ int main() {
 
 			cout << endl;
 			cout << endl;
-		
-				//LISTA KNJIGA KOJE SE NALAZE U SISTEMU
-				if (RB_opcije == 1) {
+
+			//LISTA KNJIGA KOJE SE NALAZE U SISTEMU
+			if (RB_opcije == 1) {
+
+				system("CLS");
+
+				meni_za_pregled_knjiga();
+
+				cout << endl;
+				cout << endl;
+
+				cout << "\t\t\t   _________________________________________________ \n ";
+				cout << "\t\t\t  |                                                 |\n ";
+				cout << "\t\t\t  |  UNESITE REDNI BROJ JEDNE OD METODE SORTIRANJA  |\n";
+				cout << "\t\t\t  |_________________________________________________|\n ";
+
+				cout << "\n\t\t\t\t  Birate metodu pod rednim brojem: ";
+				int vas_odabir;
+				cin >> vas_odabir;
+				cin.ignore();
+
+				if (vas_odabir == 1) {
 
 					system("CLS");
 
-					meni_za_pregled_knjiga();
+					cout << "\t\t\t   ______________________________________\n ";
+					cout << "\t\t\t  |                                      |\n ";
+					cout << "\t\t\t  |  SORTIRANJE PREMA NASLOVU [ A - Z ]  |\n";
+					cout << "\t\t\t  |______________________________________|\n ";
 
-					cout << endl;
-					cout << endl;
 
-					cout << "\t\t\t   _________________________________________________ \n ";
-					cout << "\t\t\t  |                                                 |\n ";
-					cout << "\t\t\t  |  UNESITE REDNI BROJ JEDNE OD METODE SORTIRANJA  |\n";
-					cout << "\t\t\t  |_________________________________________________|\n ";
+					k.sortiranje_po_naslovu(knjige, brojac);
 
-					cout << "\n\t\t\t\t  Birate metodu pod rednim brojem: ";
-					int vas_odabir;
-					cin >> vas_odabir;
-					cin.ignore();
-
-					if (vas_odabir == 1) {
-
-						system("CLS");
-
-						cout << "\t\t\t   ______________________________________\n ";
-						cout << "\t\t\t  |                                      |\n ";
-						cout << "\t\t\t  |  SORTIRANJE PREMA NASLOVU [ A - Z ]  |\n";
-						cout << "\t\t\t  |______________________________________|\n ";
-
-
-						k.sortiranje_po_naslovu(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 2) {
-
-						system("CLS");
-
-						cout << "\t\t\t   ________________________________\n ";
-						cout << "\t\t\t  |                                |\n ";
-						cout << "\t\t\t  |  PREMA IMENU AUTORA [ A - Z ]  |\n";
-						cout << "\t\t\t  |________________________________|\n ";
-
-						k.sortiranje_po_imenu_autora(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 3) {
-
-						system("CLS");
-
-						cout << "\t\t\t   ____________________________________\n ";
-						cout << "\t\t\t  |                                    |\n ";
-						cout << "\t\t\t  |  PREMA PREZIMENU AUTORA [ A - Z ]  |\n";
-						cout << "\t\t\t  |____________________________________|\n ";
-
-						k.sortiranje_po_prezimenu_autora(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 4) {
-
-						system("CLS");
-
-						cout << "\t\t\t   _________________________________________________________\n ";
-						cout << "\t\t\t  |                                                         |\n ";
-						cout << "\t\t\t  |  PREMA GODINI IZDAVANJA [ NOVIJA IZDANJA KA STARIJIM ]  |\n";
-						cout << "\t\t\t  |_________________________________________________________|\n ";
-
-						k.sortiranje_po_godini_izdanja_novija_ka_starijim(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 5) {
-
-						system("CLS");
-
-						cout << "\t\t\t   _________________________________________________________\n ";
-						cout << "\t\t\t  |                                                         |\n ";
-						cout << "\t\t\t  |  PREMA GODINI IZDAVANJA [ STARIJA IZDANJA KA NOVIJIM ]  |\n";
-						cout << "\t\t\t  |_________________________________________________________|\n ";
-
-						k.sortiranje_po_godini_izdanja_starija_ka_novijim(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 6) {
-
-						system("CLS");
-
-						cout << "\t\t\t   ________________________________________________________\n ";
-						cout << "\t\t\t  |                                                        |\n ";
-						cout << "\t\t\t  |  PREMA BROJU STRANICA [ VECI BROJ STRANICA KA MANJE ]  |\n";
-						cout << "\t\t\t  |________________________________________________________|\n ";
-
-						k.sortiranje_po_broju_stranica_vise_ka_manje(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 7) {
-
-						system("CLS");
-
-						cout << "\t\t\t   _________________________________________________________ \n ";
-						cout << "\t\t\t  |                                                         |\n ";
-						cout << "\t\t\t  |  PREMA BROJU STRANICA [ MANJI BROJ STRANICA KA VECEM ]  |\n";
-						cout << "\t\t\t  |_________________________________________________________|\n ";
-
-						k.sortiranje_po_broju_stranica_manje_ka_vise(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 8) {
-
-						system("CLS");
-
-						cout << "\t\t\t   _______________________________________________________________ \n ";
-						cout << "\t\t\t  |                                                               |\n ";
-						cout << "\t\t\t  |  PREMA BROJU KNJIGA NA STANJU[VECI BROJ NA STANJU KA MANJEM]  |\n";
-						cout << "\t\t\t  |_______________________________________________________________|\n ";
-
-						k.sortiranje_po_broju_knjiga_na_stanju_vise_ka_manje(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 9) {
-
-						system("CLS");
-
-						cout << "\t\t\t   __________________________________________________________________ \n ";
-						cout << "\t\t\t  |                                                                  |\n ";
-						cout << "\t\t\t  |  PREMA BROJU KNJIGA NA STANJU [ MANJI BROJ NA STANJU KA VECEM ]  |\n";
-						cout << "\t\t\t  |__________________________________________________________________|\n ";
-
-						k.sortiranje_po_broju_knjiga_nastanju_manje_ka_vise(knjige, brojac);
-
-						k.lista_knjiga(knjige, brojac);
-
-						cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-						system("PAUSE>null");
-						system("CLS");
-
-					}
-
-					if (vas_odabir == 10) {
-
-						system("cls");
-
-						meni_za_pretragu_zanrova();
-
-						cout << endl;
-						cout << endl;
-
-						cout << "\t\t\t   ___________________________________________________ \n ";
-						cout << "\t\t\t  |                                                   |\n ";
-						cout << "\t\t\t  |  UNESITE REDNI BROJ JEDNOG OD PONUDJENIH ZANROVA  |\n";
-						cout << "\t\t\t  |___________________________________________________|\n ";
-
-						cout << "\n\t\t\t\t  Birate zanr pod rednim brojem: ";
-						int zanr;			cin >> zanr;			cin.ignore();
-
-						if (zanr == 1) {
-
-							pretraga_knjiga_po_zanru_drama(knjige, brojac);
-
-						}
-
-						if (zanr == 2) {
-
-							pretraga_knjiga_po_zanru_djecije(knjige, brojac);
-
-						}
-
-						if (zanr == 3) {
-
-							pretraga_knjiga_po_zanru_kriminalisticki(knjige, brojac);
-
-						}
-
-						if (zanr == 4) {
-
-							pretraga_knjiga_po_zanru_triler(knjige, brojac);
-
-						}
-
-						if (zanr == 5) {
-
-							pretraga_knjiga_po_zanru_historijski(knjige, brojac);
-
-						}
-
-					}
-
-					if (vas_odabir == 11) {
-
-						system("cls");
-
-						meni_za_pretragu_stilova();
-
-						cout << endl;
-						cout << endl;
-
-						cout << "\t\t\t   ___________________________________________________ \n ";
-						cout << "\t\t\t  |                                                   |\n ";
-						cout << "\t\t\t  |  UNESITE REDNI BROJ JEDNOG OD PONUDJENIH STILOVA  |\n";
-						cout << "\t\t\t  |___________________________________________________|\n ";
-
-						cout << "\n\t\t\t\t  Birate stil pod rednim brojem: ";
-						int stil;			cin >> stil;		cin.ignore();
-
-						if (stil == 1) {
-
-							pretraga_knjiga_po_stilu_roman(knjige, brojac);
-
-						}
-
-						if (stil == 2) {
-
-							pretraga_knjiga_po_stilu_pripovijetka(knjige, brojac);
-
-						}
-
-						if (stil == 3) {
-
-							pretraga_knjiga_po_stilu_poezija(knjige, brojac);
-
-						}
-
-						if (stil == 4) {
-
-							pretraga_knjiga_po_stilu_bajka(knjige, brojac);
-
-						}
-
-					}
-
-				}
-
-				//PRETRAGA KNJIGE PO NAZIVU/NASLOVU
-				if (RB_opcije == 2) {
-
-					system("CLS");
-
-					meni_za_pretragu_knjiga();
-
-					cout << endl;
-					cout << endl;
-
-					cout << "\t\t\t   _______________________________________________ \n ";
-					cout << "\t\t\t  |                                               |\n ";
-					cout << "\t\t\t  |  UNESITE REDNI BROJ JEDNE OD METODE PRETRAGE  |\n";
-					cout << "\t\t\t  |_______________________________________________|\n ";
-
-					cout << "\n\t\t\t\t  Birate metodu pod rednim brojem: ";
-					int vas_odabir;
-					cin >> vas_odabir;
-					cin.ignore();
-
-					if (vas_odabir == 1) {
-
-						system("CLS");
-
-						cout << "\t\t\t   __________________________\n ";
-						cout << "\t\t\t  |                          |\n ";
-						cout << "\t\t\t  |  PRETRAGA PREMA NASLOVU  |\n";
-						cout << "\t\t\t  |__________________________|\n ";
-
-
-						cout << "\n\n\t\t     Unesite naslov knjige koju zelite pronaci: ";
-						string naslov;
-						getline(cin, naslov);
-
-						k.pretraga_knjige_po_nazivu(knjige, brojac, naslov);
-
-					}
-
-					if (vas_odabir == 2) {
-
-						system("CLS");
-
-						cout << "\t\t\t   _______________________________\n ";
-						cout << "\t\t\t  |                               |\n ";
-						cout << "\t\t\t  |  PRETRAGA PREMA IMENU AUTORA  |\n";
-						cout << "\t\t\t  |_______________________________|\n ";
-
-
-						cout << "\n\n\t\t     Unesite ima autora kojeg zelite pronaci: ";
-						string naslov;
-						getline(cin, naslov);
-
-						k.pretraga_knjige_po_imenu_autora(knjige, brojac, naslov);
-
-					}
-
-					if (vas_odabir == 3) {
-
-						system("CLS");
-
-						cout << "\t\t\t   ___________________________________\n ";
-						cout << "\t\t\t  |                                   |\n ";
-						cout << "\t\t\t  |  PRETRAGA PREMA PREZIMENU AUTORA  |\n";
-						cout << "\t\t\t  |___________________________________|\n ";
-
-
-						cout << "\n\n\t\t     Unesite prezima autora kojeg zelite pronaci: ";
-						string naslov;
-						getline(cin, naslov);
-
-						k.pretraga_knjige_po_prezimenu_autora(knjige, brojac, naslov);
-
-					}
-
-					if (vas_odabir == 4) {
-
-						system("CLS");
-
-						cout << "\t\t\t   __________________________________\n ";
-						cout << "\t\t\t  |                                  |\n ";
-						cout << "\t\t\t  |  PRETRAGA PREMA IZDAVACKOJ KUCI  |\n";
-						cout << "\t\t\t  |__________________________________|\n ";
-
-
-						cout << "\n\n\t\t\tUnesite izdavacku kucu koju zelite pronaci: ";
-						string naslov;
-						getline(cin, naslov);
-
-						k.pretraga_knjige_po_izdavackoj_kuci(knjige, brojac, naslov);
-
-					}
-
-					if (vas_odabir == 5) {
-
-						system("CLS");
-
-						cout << "\t\t\t   ___________________________________\n ";
-						cout << "\t\t\t  |                                   |\n ";
-						cout << "\t\t\t  |  PRETRAGA PREMA GODINI IZDAVANJA  |\n";
-						cout << "\t\t\t  |___________________________________|\n ";
-
-
-						cout << "\n\n\t\t\tUnesite godinu izdavanja: ";
-						int godina;
-						cin >> godina;
-						cin.ignore();
-
-						k.pretraga_knjige_po_godini_izdavanja(knjige, brojac, godina);
-
-					}
-
-				}
-
-				//UNOS PODATAKA PRI UCLANJENJU
-				if (RB_opcije == 3) {
-
-					cout << "\t\t         __________________________________________" << endl;
-					cout << "\t\t        |                                          |" << endl;
-					cout << "\t\t        |  UNOSENJE PODATAKA O KORISNICI/KORISNIKU |" << endl;
-					cout << "\t\t        |__________________________________________|" << endl;
-
-					cout << endl;
-					cout << endl;
-
-					korisnici[brojac_korisnika++] = ko.unos_korisnika();
-
-					cout << "\n\n\t\t\t        ---USPJESNO POHRANJENI PODACI---\n";
-
-					//Spremanje u "clanska_karta.txt"
-					clanska_karta(korisnici, brojac_korisnika);
+					k.lista_knjiga(knjige, brojac);
 
 					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
 
@@ -3706,67 +3368,455 @@ int main() {
 
 				}
 
-				if (RB_opcije == 4) {};
+				if (vas_odabir == 2) {
 
-				if (RB_opcije == 5) {
+					system("CLS");
 
-					feedback_menu();
+					cout << "\t\t\t   ________________________________\n ";
+					cout << "\t\t\t  |                                |\n ";
+					cout << "\t\t\t  |  PREMA IMENU AUTORA [ A - Z ]  |\n";
+					cout << "\t\t\t  |________________________________|\n ";
+
+					k.sortiranje_po_imenu_autora(knjige, brojac);
+
+					k.lista_knjiga(knjige, brojac);
+
+					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+					system("PAUSE>null");
+					system("CLS");
 
 				}
 
-				if (RB_opcije == 6) {
+				if (vas_odabir == 3) {
+
+					system("CLS");
+
+					cout << "\t\t\t   ____________________________________\n ";
+					cout << "\t\t\t  |                                    |\n ";
+					cout << "\t\t\t  |  PREMA PREZIMENU AUTORA [ A - Z ]  |\n";
+					cout << "\t\t\t  |____________________________________|\n ";
+
+					k.sortiranje_po_prezimenu_autora(knjige, brojac);
+
+					k.lista_knjiga(knjige, brojac);
+
+					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+					system("PAUSE>null");
+					system("CLS");
+
+				}
+
+				if (vas_odabir == 4) {
+
+					system("CLS");
+
+					cout << "\t\t\t   _________________________________________________________\n ";
+					cout << "\t\t\t  |                                                         |\n ";
+					cout << "\t\t\t  |  PREMA GODINI IZDAVANJA [ NOVIJA IZDANJA KA STARIJIM ]  |\n";
+					cout << "\t\t\t  |_________________________________________________________|\n ";
+
+					k.sortiranje_po_godini_izdanja_novija_ka_starijim(knjige, brojac);
+
+					k.lista_knjiga(knjige, brojac);
+
+					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+					system("PAUSE>null");
+					system("CLS");
+
+				}
+
+				if (vas_odabir == 5) {
+
+					system("CLS");
+
+					cout << "\t\t\t   _________________________________________________________\n ";
+					cout << "\t\t\t  |                                                         |\n ";
+					cout << "\t\t\t  |  PREMA GODINI IZDAVANJA [ STARIJA IZDANJA KA NOVIJIM ]  |\n";
+					cout << "\t\t\t  |_________________________________________________________|\n ";
+
+					k.sortiranje_po_godini_izdanja_starija_ka_novijim(knjige, brojac);
+
+					k.lista_knjiga(knjige, brojac);
+
+					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+					system("PAUSE>null");
+					system("CLS");
+
+				}
+
+				if (vas_odabir == 6) {
+
+					system("CLS");
+
+					cout << "\t\t\t   ________________________________________________________\n ";
+					cout << "\t\t\t  |                                                        |\n ";
+					cout << "\t\t\t  |  PREMA BROJU STRANICA [ VECI BROJ STRANICA KA MANJE ]  |\n";
+					cout << "\t\t\t  |________________________________________________________|\n ";
+
+					k.sortiranje_po_broju_stranica_vise_ka_manje(knjige, brojac);
+
+					k.lista_knjiga(knjige, brojac);
+
+					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+					system("PAUSE>null");
+					system("CLS");
+
+				}
+
+				if (vas_odabir == 7) {
+
+					system("CLS");
+
+					cout << "\t\t\t   _________________________________________________________ \n ";
+					cout << "\t\t\t  |                                                         |\n ";
+					cout << "\t\t\t  |  PREMA BROJU STRANICA [ MANJI BROJ STRANICA KA VECEM ]  |\n";
+					cout << "\t\t\t  |_________________________________________________________|\n ";
+
+					k.sortiranje_po_broju_stranica_manje_ka_vise(knjige, brojac);
+
+					k.lista_knjiga(knjige, brojac);
+
+					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+					system("PAUSE>null");
+					system("CLS");
+
+				}
+
+				if (vas_odabir == 8) {
+
+					system("CLS");
+
+					cout << "\t\t\t   _______________________________________________________________ \n ";
+					cout << "\t\t\t  |                                                               |\n ";
+					cout << "\t\t\t  |  PREMA BROJU KNJIGA NA STANJU[VECI BROJ NA STANJU KA MANJEM]  |\n";
+					cout << "\t\t\t  |_______________________________________________________________|\n ";
+
+					k.sortiranje_po_broju_knjiga_na_stanju_vise_ka_manje(knjige, brojac);
+
+					k.lista_knjiga(knjige, brojac);
+
+					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+					system("PAUSE>null");
+					system("CLS");
+
+				}
+
+				if (vas_odabir == 9) {
+
+					system("CLS");
+
+					cout << "\t\t\t   __________________________________________________________________ \n ";
+					cout << "\t\t\t  |                                                                  |\n ";
+					cout << "\t\t\t  |  PREMA BROJU KNJIGA NA STANJU [ MANJI BROJ NA STANJU KA VECEM ]  |\n";
+					cout << "\t\t\t  |__________________________________________________________________|\n ";
+
+					k.sortiranje_po_broju_knjiga_nastanju_manje_ka_vise(knjige, brojac);
+
+					k.lista_knjiga(knjige, brojac);
+
+					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+					system("PAUSE>null");
+					system("CLS");
+
+				}
+
+				if (vas_odabir == 10) {
+
+					system("cls");
+
+					meni_za_pretragu_zanrova();
 
 					cout << endl;
+					cout << endl;
 
-					cout << "\n\n\t\t\t Zelite li promijeniti nacin rada? \n";
-					cout << "\n\t\t\t        1 - Nacin rada za uposlene ";
-					cout << "\n\t\t\t        2 - Nacin rada za korisnike ";
-					cout << "\n\t\t\t        10 - Izlaz ";
-					cout << "\n\n\t\t\t Unesite redni broj zeljene opcije: ";
-					int redni_broj_opcije;
-					cin >> redni_broj_opcije;
-					cin.ignore();
+					cout << "\t\t\t   ___________________________________________________ \n ";
+					cout << "\t\t\t  |                                                   |\n ";
+					cout << "\t\t\t  |  UNESITE REDNI BROJ JEDNOG OD PONUDJENIH ZANROVA  |\n";
+					cout << "\t\t\t  |___________________________________________________|\n ";
 
-					if (redni_broj_opcije == 1) {
+					cout << "\n\t\t\t\t  Birate zanr pod rednim brojem: ";
+					int zanr;			cin >> zanr;			cin.ignore();
 
-						goto za_uposlene;
+					if (zanr == 1) {
 
-					}
-
-					if (redni_broj_opcije == 2) {
-
-						goto za_korisnike;
+						pretraga_knjiga_po_zanru_drama(knjige, brojac);
 
 					}
 
-					else {
+					if (zanr == 2) {
 
-						system("CLS");
+						pretraga_knjiga_po_zanru_djecije(knjige, brojac);
 
-						cout << endl;
-						cout << endl;
+					}
 
-						cout << "\t\t         _____________________________________" << endl;
-						cout << "\t\t        |                                     |" << endl;
-						cout << "\t\t        |  HVALA NA KORISTENJU NASEG SISTEMA  |" << endl;
-						cout << "\t\t        |_____________________________________|" << endl;
+					if (zanr == 3) {
 
-						cout << endl;
-						cout << endl;
-						cout << endl;
+						pretraga_knjiga_po_zanru_kriminalisticki(knjige, brojac);
 
-						cout << "\n\n\n\t\t\t\t\t\t  Pritisnite ESC za izlazak iz programa\n";
+					}
 
-						system("PAUSE>null");
-						system("CLS");
+					if (zanr == 4) {
 
-						EXIT_SUCCESS;
+						pretraga_knjiga_po_zanru_triler(knjige, brojac);
+
+					}
+
+					if (zanr == 5) {
+
+						pretraga_knjiga_po_zanru_historijski(knjige, brojac);
 
 					}
 
 				}
 
-				if (RB_opcije == 10) {
+				if (vas_odabir == 11) {
+
+					system("cls");
+
+					meni_za_pretragu_stilova();
+
+					cout << endl;
+					cout << endl;
+
+					cout << "\t\t\t   ___________________________________________________ \n ";
+					cout << "\t\t\t  |                                                   |\n ";
+					cout << "\t\t\t  |  UNESITE REDNI BROJ JEDNOG OD PONUDJENIH STILOVA  |\n";
+					cout << "\t\t\t  |___________________________________________________|\n ";
+
+					cout << "\n\t\t\t\t  Birate stil pod rednim brojem: ";
+					int stil;			cin >> stil;		cin.ignore();
+
+					if (stil == 1) {
+
+						pretraga_knjiga_po_stilu_roman(knjige, brojac);
+
+					}
+
+					if (stil == 2) {
+
+						pretraga_knjiga_po_stilu_pripovijetka(knjige, brojac);
+
+					}
+
+					if (stil == 3) {
+
+						pretraga_knjiga_po_stilu_poezija(knjige, brojac);
+
+					}
+
+					if (stil == 4) {
+
+						pretraga_knjiga_po_stilu_bajka(knjige, brojac);
+
+					}
+
+				}
+
+			}
+
+			//PRETRAGA KNJIGE PO NAZIVU/NASLOVU
+			if (RB_opcije == 2) {
+
+				system("CLS");
+
+				meni_za_pretragu_knjiga();
+
+				cout << endl;
+				cout << endl;
+
+				cout << "\t\t\t   _______________________________________________ \n ";
+				cout << "\t\t\t  |                                               |\n ";
+				cout << "\t\t\t  |  UNESITE REDNI BROJ JEDNE OD METODE PRETRAGE  |\n";
+				cout << "\t\t\t  |_______________________________________________|\n ";
+
+				cout << "\n\t\t\t\t  Birate metodu pod rednim brojem: ";
+				int vas_odabir;
+				cin >> vas_odabir;
+				cin.ignore();
+
+				if (vas_odabir == 1) {
+
+					system("CLS");
+
+					cout << "\t\t\t   __________________________\n ";
+					cout << "\t\t\t  |                          |\n ";
+					cout << "\t\t\t  |  PRETRAGA PREMA NASLOVU  |\n";
+					cout << "\t\t\t  |__________________________|\n ";
+
+
+					cout << "\n\n\t\t     Unesite naslov knjige koju zelite pronaci: ";
+					string naslov;
+					getline(cin, naslov);
+
+					k.pretraga_knjige_po_nazivu(knjige, brojac, naslov);
+
+				}
+
+				if (vas_odabir == 2) {
+
+					system("CLS");
+
+					cout << "\t\t\t   _______________________________\n ";
+					cout << "\t\t\t  |                               |\n ";
+					cout << "\t\t\t  |  PRETRAGA PREMA IMENU AUTORA  |\n";
+					cout << "\t\t\t  |_______________________________|\n ";
+
+
+					cout << "\n\n\t\t     Unesite ima autora kojeg zelite pronaci: ";
+					string naslov;
+					getline(cin, naslov);
+
+					k.pretraga_knjige_po_imenu_autora(knjige, brojac, naslov);
+
+				}
+
+				if (vas_odabir == 3) {
+
+					system("CLS");
+
+					cout << "\t\t\t   ___________________________________\n ";
+					cout << "\t\t\t  |                                   |\n ";
+					cout << "\t\t\t  |  PRETRAGA PREMA PREZIMENU AUTORA  |\n";
+					cout << "\t\t\t  |___________________________________|\n ";
+
+
+					cout << "\n\n\t\t     Unesite prezima autora kojeg zelite pronaci: ";
+					string naslov;
+					getline(cin, naslov);
+
+					k.pretraga_knjige_po_prezimenu_autora(knjige, brojac, naslov);
+
+				}
+
+				if (vas_odabir == 4) {
+
+					system("CLS");
+
+					cout << "\t\t\t   __________________________________\n ";
+					cout << "\t\t\t  |                                  |\n ";
+					cout << "\t\t\t  |  PRETRAGA PREMA IZDAVACKOJ KUCI  |\n";
+					cout << "\t\t\t  |__________________________________|\n ";
+
+
+					cout << "\n\n\t\t\tUnesite izdavacku kucu koju zelite pronaci: ";
+					string naslov;
+					getline(cin, naslov);
+
+					k.pretraga_knjige_po_izdavackoj_kuci(knjige, brojac, naslov);
+
+				}
+
+				if (vas_odabir == 5) {
+
+					system("CLS");
+
+					cout << "\t\t\t   ___________________________________\n ";
+					cout << "\t\t\t  |                                   |\n ";
+					cout << "\t\t\t  |  PRETRAGA PREMA GODINI IZDAVANJA  |\n";
+					cout << "\t\t\t  |___________________________________|\n ";
+
+
+					cout << "\n\n\t\t\tUnesite godinu izdavanja: ";
+					int godina;
+					cin >> godina;
+					cin.ignore();
+
+					k.pretraga_knjige_po_godini_izdavanja(knjige, brojac, godina);
+
+				}
+
+			}
+
+			//UNOS PODATAKA PRI UCLANJENJU
+			if (RB_opcije == 3) {
+
+				cout << "\t\t         __________________________________________" << endl;
+				cout << "\t\t        |                                          |" << endl;
+				cout << "\t\t        |  UNOSENJE PODATAKA O KORISNICI/KORISNIKU |" << endl;
+				cout << "\t\t        |__________________________________________|" << endl;
+
+				cout << endl;
+				cout << endl;
+
+				korisnici[brojac_korisnika++] = ko.unos_korisnika();
+
+				cout << "\n\n\t\t\t        ---USPJESNO POHRANJENI PODACI---\n";
+
+				//Spremanje u "clanska_karta.txt"
+				clanska_karta(korisnici, brojac_korisnika);
+
+				cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+				system("PAUSE>null");
+				system("CLS");
+
+			}
+
+			if (RB_opcije == 4) {
+
+				system("CLS");
+
+				popust();
+
+				cout << "\t\t Po koji put se zelite uclaniti u biblioteku? ";
+				int broj;
+				cin >> broj;
+				cin.ignore();
+
+				cout << endl;
+
+				cout << "\t\t Ukoliko se " << broj << ". put uclanjujete u biblioteku, cijena godisnje\n\t\t pretplate ce iznositi " 
+					<< fixed << setprecision(2) << (float)cijena_godisnja_pretplata(k.cijena_godisnje_pretplate, broj) << "KM, umjesto 50KM. \n";
+
+				cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
+
+				system("PAUSE>null");
+				system("CLS");
+
+			}
+
+			if (RB_opcije == 5) {};
+
+			if (RB_opcije == 6) {
+
+				feedback_menu();
+
+			}
+
+			if (RB_opcije == 7) {
+
+				cout << endl;
+
+				cout << "\n\n\t\t\t Zelite li promijeniti nacin rada? \n";
+				cout << "\n\t\t\t        1 - Nacin rada za uposlene ";
+				cout << "\n\t\t\t        2 - Nacin rada za korisnike ";
+				cout << "\n\t\t\t        10 - Izlaz ";
+				cout << "\n\n\t\t\t Unesite redni broj zeljene opcije: ";
+				int redni_broj_opcije;
+				cin >> redni_broj_opcije;
+				cin.ignore();
+
+				if (redni_broj_opcije == 1) {
+
+					goto za_uposlene;
+
+				}
+
+				if (redni_broj_opcije == 2) {
+
+					goto za_korisnike;
+
+				}
+
+				else {
 
 					system("CLS");
 
@@ -3791,7 +3841,34 @@ int main() {
 
 				}
 
-			} while(RB_opcije >= 1 && RB_opcije <= 6 && RB_opcije != 10);
+			}
+
+			if (RB_opcije == 10) {
+
+				system("CLS");
+
+				cout << endl;
+				cout << endl;
+
+				cout << "\t\t         _____________________________________" << endl;
+				cout << "\t\t        |                                     |" << endl;
+				cout << "\t\t        |  HVALA NA KORISTENJU NASEG SISTEMA  |" << endl;
+				cout << "\t\t        |_____________________________________|" << endl;
+
+				cout << endl;
+				cout << endl;
+				cout << endl;
+
+				cout << "\n\n\n\t\t\t\t\t\t  Pritisnite ESC za izlazak iz programa\n";
+
+				system("PAUSE>null");
+				system("CLS");
+
+				EXIT_SUCCESS;
+
+			}
+
+		} while (RB_opcije >= 1 && RB_opcije <= 6 && RB_opcije != 10);
 
 	}
 
