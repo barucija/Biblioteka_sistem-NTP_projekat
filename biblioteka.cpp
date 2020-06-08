@@ -309,10 +309,9 @@ void meni_za_pregled_knjiga() {
 	cout << "\t\t\t      5. Prema godini izdavanja [ starija izdanja ka novijim ]\n";
 	cout << "\t\t\t      6. Prema broju stranica [ veci broj stranica ka manje ]\n";
 	cout << "\t\t\t      7. Prema broju stranica [ manji broj stranica ka vecem ]\n";
-	cout << "\t\t\t      8. Prema broju knjiga na stanju [ veci broj na stanju ka manjem ]\n";
-	cout << "\t\t\t      9. Prema broju knjiga na stanju [ manji broj na stanju ka vecem ]\n";
-	cout << "\t\t\t      10. Prema zanru\n";
-	cout << "\t\t\t      11. Prema stilu pisanja\n";
+	cout << "\t\t\t      8. Prema zanru\n";
+	cout << "\t\t\t      9. Prema stilu pisanja\n";
+	cout << "\t\t\t      10. Povratak u glavni meni\n";
 
 	cout << endl;
 	cout << endl;
@@ -345,6 +344,7 @@ void meni_za_pretragu_zanrova() {
 	cout << "\t\t\t\t      3. Kriminalisticki\n";
 	cout << "\t\t\t\t      4. Triler\n";
 	cout << "\t\t\t\t      5. Historijski\n";
+	cout << "\t\t\t\t      10. Povratak u meni metoda pregleda knjiga\n";
 
 	cout << endl;
 	cout << endl;
@@ -376,6 +376,7 @@ void meni_za_pretragu_stilova() {
 	cout << "\t\t\t\t      2. Pripovijetka\n";
 	cout << "\t\t\t\t      3. Poezija\n";
 	cout << "\t\t\t\t      4. Bajka\n";
+	cout << "\t\t\t\t      10. Povratak u meni metoda pregleda knjiga\n";
 
 	cout << endl;
 	cout << endl;
@@ -409,6 +410,8 @@ void meni_za_pretragu_knjiga() {
 	cout << "\t\t\t      3. Prema prezimenu autora\n";
 	cout << "\t\t\t      4. Prema izdavackoj kuci\n";
 	cout << "\t\t\t      5. Prema godini izdavanja\n";
+	cout << "\t\t\t      10. Povratak u glavni meni\n";
+
 
 	cout << endl;
 	cout << endl;
@@ -444,6 +447,8 @@ void meni_za_pregled_korisnika() {
 	cout << "\t\t\t      6. Prema ID-u [ manji ka vecem ]\n";
 	cout << "\t\t\t      7. Spisak zenskih osoba\n";
 	cout << "\t\t\t      8. Spisak muskih osoba\n";
+	cout << "\t\t\t      10. Povratak u glavni meni\n";
+
 
 	cout << endl;
 	cout << endl;
@@ -605,7 +610,7 @@ struct Korisnik {
 
 		cout << "\t\t\t\t    | 1 - Sedmicno [ 10 KM ]  |\n";
 		cout << "\t\t\t\t    | 2 - Mjesecno [ 15 KM ]  |\n";
-		cout << "\t\t\t\t    | 3 - Godisnje [ 50 KM ] |\n";
+		cout << "\t\t\t\t    | 3 - Godisnje [ 50 KM ]  |\n";
 
 		cout << "\n\t\t\t\t    Odaberite vremenski period clanstva: ";
 		int odabir_clanstva;
@@ -1412,7 +1417,7 @@ struct Knjiga {
 
 			k.stil = (Stil_pisanja)odabir_stila;
 
-			cout << endl;
+			/*cout << endl;
 
 			cout << "\t\t\t\t    Kolicina na stanju: ";
 
@@ -1441,7 +1446,7 @@ struct Knjiga {
 
 				cin >> k.na_stanju;
 
-			}
+			}*/
 
 			cin.ignore();
 
@@ -1559,7 +1564,7 @@ struct Knjiga {
 				}
 				cout << endl;
 
-				cout << "\t\t\t\tNa stanju se nalaze/nalazi " << knjige[i].na_stanju << " knjige/knjiga pod ovim nazivom!" << endl;
+				//cout << "\t\t\t\tNa stanju se nalaze/nalazi " << knjige[i].na_stanju << " knjige/knjiga pod ovim nazivom!" << endl;
 
 			}
 
@@ -1619,7 +1624,7 @@ struct Knjiga {
 		}
 		cout << endl;
 
-		cout << "\t\t\t\tNa stanju se nalaze/nalazi " << knjige->na_stanju << " knjige/knjiga pod ovim nazivom!";
+		//cout << "\t\t\t\tNa stanju se nalaze/nalazi " << knjige->na_stanju << " knjige/knjiga pod ovim nazivom!";
 
 	}
 
@@ -2020,7 +2025,7 @@ void knjige_u_sistemu(Knjiga knjige[], int brojac) {
 		dostupne_knjige << "\t\t\t\t\t\tAutor: " << knjige[i].ime_autora << " " << knjige[i].prezime_autora << endl;
 		dostupne_knjige << "\t\t\t\t\t\tIzdavacka kuca: " << knjige[i].izdavacka_kuca << endl;
 		dostupne_knjige << "\t\t\t\t\t\tGodina izdavanja: " << knjige[i].godina_izdavanja << endl;
-		dostupne_knjige << "\t\t\t\t\t\tNa stanju: " << knjige[i].na_stanju << " knjiga pod ovim naslovom. " << endl;
+		//dostupne_knjige << "\t\t\t\t\t\tNa stanju: " << knjige[i].na_stanju << " knjiga pod ovim naslovom. " << endl;
 
 		dostupne_knjige << endl;
 
@@ -2585,6 +2590,8 @@ int main() {
 
 		do {
 
+		povratak_u_glavni_meni:
+
 			system("CLS");
 
 			glavni_meni();
@@ -2632,6 +2639,8 @@ int main() {
 
 			//LISTA KNJIGA KOJE SE NALAZE U SISTEMU
 			if (RB_opcije == 2) {
+
+			povratak_u_meni_pregleda_metoda_za_pregled_knjiga:
 
 				system("CLS");
 
@@ -2793,46 +2802,6 @@ int main() {
 
 				if (vas_odabir == 8) {
 
-					system("CLS");
-
-					cout << "\t\t\t   _______________________________________________________________ \n ";
-					cout << "\t\t\t  |                                                               |\n ";
-					cout << "\t\t\t  |  PREMA BROJU KNJIGA NA STANJU[VECI BROJ NA STANJU KA MANJEM]  |\n";
-					cout << "\t\t\t  |_______________________________________________________________|\n ";
-
-					k.sortiranje_po_broju_knjiga_na_stanju_vise_ka_manje(knjige, brojac);
-
-					k.lista_knjiga(knjige, brojac);
-
-					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-					system("PAUSE>null");
-					system("CLS");
-
-				}
-
-				if (vas_odabir == 9) {
-
-					system("CLS");
-
-					cout << "\t\t\t   __________________________________________________________________ \n ";
-					cout << "\t\t\t  |                                                                  |\n ";
-					cout << "\t\t\t  |  PREMA BROJU KNJIGA NA STANJU [ MANJI BROJ NA STANJU KA VECEM ]  |\n";
-					cout << "\t\t\t  |__________________________________________________________________|\n ";
-
-					k.sortiranje_po_broju_knjiga_nastanju_manje_ka_vise(knjige, brojac);
-
-					k.lista_knjiga(knjige, brojac);
-
-					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-					system("PAUSE>null");
-					system("CLS");
-
-				}
-
-				if (vas_odabir == 10) {
-
 					system("cls");
 
 					meni_za_pretragu_zanrova();
@@ -2878,9 +2847,15 @@ int main() {
 
 					}
 
+					if (zanr == 10) {
+
+						goto povratak_u_meni_pregleda_metoda_za_pregled_knjiga;
+
+					}
+
 				}
 
-				if (vas_odabir == 11) {
+				if (vas_odabir == 9) {
 
 					system("cls");
 
@@ -2920,6 +2895,18 @@ int main() {
 						pretraga_knjiga_po_stilu_bajka(knjige, brojac);
 
 					}
+
+					if (stil == 10) {
+
+						goto povratak_u_meni_pregleda_metoda_za_pregled_knjiga;
+
+					}
+
+				}
+
+				if (vas_odabir == 10) {
+
+					goto povratak_u_glavni_meni;
 
 				}
 
@@ -3036,6 +3023,12 @@ int main() {
 
 				}
 
+				if (vas_odabir == 10) {
+
+					goto povratak_u_glavni_meni;
+
+				}
+
 			}
 
 			//UNOS PODATAKA PRI UCLANJENJU
@@ -3128,10 +3121,10 @@ int main() {
 
 					system("CLS");
 
-					cout << "\t\t\t   ________________________________________________________________\n ";
-					cout << "\t\t\t  |                                                                |\n ";
-					cout << "\t\t\t  |  SORTIRANJE PREMA BROJU GODINA [ MLADJI IZDANJA KA STARIJIM ]  |\n";
-					cout << "\t\t\t  |________________________________________________________________|\n ";
+					cout << "\t\t\t   ________________________________________________________\n ";
+					cout << "\t\t\t  |                                                        |\n ";
+					cout << "\t\t\t  |  SORTIRANJE PREMA BROJU GODINA [ MLADJI KA STARIJIM ]  |\n";
+					cout << "\t\t\t  |________________________________________________________|\n ";
 
 					ko.sortiranje_korisnika_po_broju_godina_mladji_ka_starijima(korisnici, brojac_korisnika);
 
@@ -3148,10 +3141,10 @@ int main() {
 
 					system("CLS");
 
-					cout << "\t\t\t   _______________________________________________________________\n ";
-					cout << "\t\t\t  |                                                               |\n ";
-					cout << "\t\t\t  |  SORTIRANJE PREMA BROJU GODINA [ STARIJA IZDANJA KA MLADIM ]  |\n";
-					cout << "\t\t\t  |_______________________________________________________________|\n ";
+					cout << "\t\t\t   _______________________________________________________\n ";
+					cout << "\t\t\t  |                                                       |\n ";
+					cout << "\t\t\t  |  SORTIRANJE PREMA BROJU GODINA [ STARIJA KA MLADIM ]  |\n";
+					cout << "\t\t\t  |_______________________________________________________|\n ";
 
 					ko.sortiranje_korisnika_po_broju_godina_stariji_ka_mladjima(korisnici, brojac_korisnika);
 
@@ -3213,6 +3206,12 @@ int main() {
 				if (vas_odabir == 8) {
 
 					pretraga_muskih_osoba(korisnici, brojac_korisnika);
+
+				}
+
+				if (vas_odabir == 10) {
+
+					goto povratak_u_glavni_meni;
 
 				}
 
@@ -3330,6 +3329,8 @@ int main() {
 			//LISTA KNJIGA KOJE SE NALAZE U SISTEMU
 			if (RB_opcije == 1) {
 
+			meni_pregled_knjiga_korisnici:
+
 				system("CLS");
 
 				meni_za_pregled_knjiga();
@@ -3490,46 +3491,6 @@ int main() {
 
 				if (vas_odabir == 8) {
 
-					system("CLS");
-
-					cout << "\t\t\t   _______________________________________________________________ \n ";
-					cout << "\t\t\t  |                                                               |\n ";
-					cout << "\t\t\t  |  PREMA BROJU KNJIGA NA STANJU[VECI BROJ NA STANJU KA MANJEM]  |\n";
-					cout << "\t\t\t  |_______________________________________________________________|\n ";
-
-					k.sortiranje_po_broju_knjiga_na_stanju_vise_ka_manje(knjige, brojac);
-
-					k.lista_knjiga(knjige, brojac);
-
-					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-					system("PAUSE>null");
-					system("CLS");
-
-				}
-
-				if (vas_odabir == 9) {
-
-					system("CLS");
-
-					cout << "\t\t\t   __________________________________________________________________ \n ";
-					cout << "\t\t\t  |                                                                  |\n ";
-					cout << "\t\t\t  |  PREMA BROJU KNJIGA NA STANJU [ MANJI BROJ NA STANJU KA VECEM ]  |\n";
-					cout << "\t\t\t  |__________________________________________________________________|\n ";
-
-					k.sortiranje_po_broju_knjiga_nastanju_manje_ka_vise(knjige, brojac);
-
-					k.lista_knjiga(knjige, brojac);
-
-					cout << "\n\n\n\t\t\t\t\t\t\t Pritisnite ENTER\n\t\t\t\t\t   za povrataka u glavni izbornik";
-
-					system("PAUSE>null");
-					system("CLS");
-
-				}
-
-				if (vas_odabir == 10) {
-
 					system("cls");
 
 					meni_za_pretragu_zanrova();
@@ -3575,9 +3536,15 @@ int main() {
 
 					}
 
+					if (zanr == 10) {
+
+						goto meni_pregled_knjiga_korisnici;
+
+					}
+
 				}
 
-				if (vas_odabir == 11) {
+				if (vas_odabir == 9) {
 
 					system("cls");
 
@@ -3618,8 +3585,19 @@ int main() {
 
 					}
 
+					if (stil == 10) {
+
+						goto meni_pregled_knjiga_korisnici;
+
+					}
+
 				}
 
+				if (vas_odabir == 10) {
+
+					goto za_korisnike;
+
+				}
 			}
 
 			//PRETRAGA KNJIGE PO NAZIVU/NASLOVU
@@ -3730,6 +3708,12 @@ int main() {
 					cin.ignore();
 
 					k.pretraga_knjige_po_godini_izdavanja(knjige, brojac, godina);
+
+				}
+
+				if (vas_odabir == 10) {
+
+					goto za_korisnike;
 
 				}
 
